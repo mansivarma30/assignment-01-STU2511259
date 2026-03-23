@@ -32,3 +32,39 @@ Sales Representative **SR01 – Deepak Joshi** appears in numerous rows with the
 **Evidence from CSV:**  
 Multiple rows such as:
 - `ORD1114`
+- `ORD1153`
+- `ORD1083`
+- `ORD1091`
+
+All contain:
+- `sales_rep_id = SR01`
+- `sales_rep_email = deepak@corp.com`
+- `office_address = "Mumbai HQ, Nariman Point, Mumbai - 400021"`
+
+Failing to update even one row would result in inconsistent data.
+
+**Relevant columns:**  
+`sales_rep_name`, `sales_rep_email`, `office_address`
+
+---
+
+### Delete Anomaly
+
+A delete anomaly occurs when deleting a row unintentionally removes additional valuable information.
+
+**Example:**  
+If the last order placed by a customer is deleted, all information about that customer is lost from the dataset.
+
+**Evidence from CSV:**  
+Deleting all rows associated with:
+- `customer_id = C008` (Kavya Rao)
+
+would remove the customer’s:
+- Name
+- Email
+- City
+
+Similarly, deleting all orders for a product such as `P008 – Webcam` would completely remove the product’s existence from the database.
+
+**Relevant columns:**  
+`customer_id`, `customer_name`, `product_id`, `product_name`
