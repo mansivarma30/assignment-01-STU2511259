@@ -68,3 +68,12 @@ Similarly, deleting all orders for a product such as `P008 – Webcam` would com
 
 **Relevant columns:**  
 `customer_id`, `customer_name`, `product_id`, `product_name`
+
+
+## Normalization Justification
+While storing all data in a single table may appear simpler initially, the orders_flat.csv dataset clearly demonstrates why this approach is problematic at scale. The flat structure introduces redundancy, inconsistencies, and operational risks that normalization is designed to eliminate.
+For example, customer information such as name, email, and city is repeated for every order placed by the same customer. In the dataset, “Rohan Mehta” appears across dozens of rows. If his email address changes, it must be updated in every occurrence. Missing even one update results in inconsistent data, which directly impacts reporting accuracy. This is a classic update anomaly that normalization resolves by storing customer data in a dedicated table.
+Similarly, sales representative details such as office address and email are duplicated across all orders they handle. This not only wastes storage but also increases the likelihood of data errors. The dataset already shows minor inconsistencies such as variations in office address formatting (e.g., “Nariman Point” vs “Nariman Pt”), highlighting the risk.
+From an insertion and deletion perspective, the flat table fails to support independent entity management. New products or sales representatives cannot be added unless an order exists, and deleting the last order for a product or customer removes all knowledge of that entity.
+Normalization to Third Normal Form separates concerns into customers, products, orders, and sales representatives. This design improves data integrity, supports scalability, and makes the database easier to maintain and query. Therefore, normalization is not over-engineering; it is essential for reliable and professional database design.
+
