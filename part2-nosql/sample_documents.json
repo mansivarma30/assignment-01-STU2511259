@@ -1,0 +1,48 @@
+[
+  {
+    "_id": "ELEC1001",
+    "category": "Electronics",
+    "name": "Samsung 55-inch Smart TV",
+    "brand": "Samsung",
+    "price": 54999,
+    "warranty_years": 2,
+    "specifications": {
+      "resolution": "4K",
+      "voltage": "220-240V",
+      "screen_type": "LED"
+    },
+    "connectivity": ["HDMI", "USB", "WiFi", "Bluetooth"],
+    "stock": 25
+  },
+  {
+    "_id": "CLOT2001",
+    "category": "Clothing",
+    "name": "Men's Cotton T-Shirt",
+    "brand": "H&M",
+    "price": 999,
+    "sizes_available": ["S", "M", "L", "XL"],
+    "colors": ["Black", "White", "Blue"],
+    "material": {
+      "fabric": "Cotton",
+      "wash_care": "Machine wash"
+    },
+    "gender": "Men",
+    "stock": 150
+  },
+  {
+    "_id": "GROC3001",
+    "category": "Groceries",
+    "name": "Organic Almond Milk",
+    "brand": "Alpro",
+    "price": 299,
+    "expiry_date": "2024-12-15",
+    "nutritional_info": {
+      "calories_per_100ml": 24,
+      "fat": "1.1g",
+      "protein": "0.6g",
+      "sugar": "0g"
+    },
+    "is_vegan": true,
+    "stock": 80
+  }
+]
